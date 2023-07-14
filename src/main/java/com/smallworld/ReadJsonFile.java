@@ -26,17 +26,8 @@ public class ReadJsonFile {
 
             JSONArray jsonArray = (JSONArray) obj;
 
-            transactionList = jsonArray.stream().map(transaction -> getTransactionObject((org.json.simple.JSONObject) transaction)).toList();
+            transactionList = jsonArray.stream().map(transaction -> getTransactionObject((JSONObject) transaction)).toList();
 
-            Double a =0.0;
-
-           for(Transaction t : transactionList){
-
-               a= a+ t.getAmount();
-               System.out.println("t = " + t);
-            }
-
-            //System.out.println("a = " + a);
 
         } catch (FileNotFoundException e) {
             throw new RuntimeException(e);

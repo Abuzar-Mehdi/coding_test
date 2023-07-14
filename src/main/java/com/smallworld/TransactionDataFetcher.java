@@ -3,7 +3,6 @@ package com.smallworld;
 import com.smallworld.data.Transaction;
 
 import java.util.*;
-import java.util.function.Function;
 import java.util.stream.Collectors;
 
 public class TransactionDataFetcher {
@@ -100,6 +99,9 @@ public class TransactionDataFetcher {
         List<Transaction> transactionList=ReadJsonFile.getDataFromFile();
 
         return transactionList.stream().collect(Collectors.toMap(Transaction::getBeneficiaryFullName,t -> t));
+
+       //return transactionList.stream()
+         //       .collect(Collectors.groupingBy(Transaction::getBeneficiaryFullName,Collectors.toList()));
 
 
        // throw new UnsupportedOperationException();
