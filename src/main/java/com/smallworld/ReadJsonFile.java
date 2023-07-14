@@ -29,11 +29,7 @@ public class ReadJsonFile {
             transactionList = jsonArray.stream().map(transaction -> getTransactionObject((JSONObject) transaction)).toList();
 
 
-        } catch (FileNotFoundException e) {
-            throw new RuntimeException(e);
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        } catch (ParseException e) {
+        } catch (IOException | ParseException e) {
             throw new RuntimeException(e);
         }
 
